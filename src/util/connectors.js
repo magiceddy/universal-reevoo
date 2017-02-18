@@ -1,4 +1,4 @@
-import { Uport } from 'uport-lib/dist/uportlib.js'
+import { Connect } from 'uport-connect';
 
-export const uport = new Uport('TEST92184091284091284')
-export const web3 = uport.getWeb3()
+export const uport = new Connect('universal-reevoo');
+export const web3 = uport.getWeb3();
