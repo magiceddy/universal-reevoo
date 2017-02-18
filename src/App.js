@@ -1,17 +1,17 @@
-import React, { Component } from 'react'
-import { Link } from 'react-router'
+import React, { Component } from 'react';
+import { Link } from 'react-router';
 
 // UI Components
-import LoginButtonContainer from './login/LoginButtonContainer'
+import LoginButtonContainer from './login/LoginButtonContainer';
 
 // Styles
-import './css/oswald.css'
-import './css/open-sans.css'
-import './css/pure-min.css'
-import './App.css'
+import './css/oswald.css';
+import './css/open-sans.css';
+import './css/pure-min.css';
+import './App.css';
 
 // Images
-import uPortLogo from './img/uport-logo.svg'
+import uPortLogo from './img/uport-logo.svg';
 
 class App extends Component {
   render() {
@@ -30,4 +30,4 @@ class App extends Component {
   }
 }
 
-export default App
+export default App;

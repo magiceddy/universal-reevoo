@@ -11,12 +11,11 @@ function userLoggedIn(user) {
 export function loginUser() {
   return function (dispatch) {
     web3.eth.getCoinbase(function (err, address) {
-      if (err) { throw err }
-      web3.eth.defaultAccount = address
+      if (err) { throw err; }
+      web3.eth.defaultAccount = address;
       uport.requestCredentials().then((credentials) => {
-        console.log(credentials);
         return dispatch(userLoggedIn(credentials));
       });
-    })
-  }
+    });
+  };
 }

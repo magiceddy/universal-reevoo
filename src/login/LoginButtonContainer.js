@@ -1,24 +1,24 @@
-import { connect } from 'react-redux'
-import LoginButton from './LoginButton'
-import { loginUser } from './LoginActions'
+import { connect } from 'react-redux';
+import LoginButton from './LoginButton';
+import { loginUser } from './LoginActions';
 
 const mapStateToProps = (state, ownProps) => {
-  return {}
-}
+  return {};
+};
 
 const mapDispatchToProps = (dispatch) => {
   return {
     onLoginUserClick: (event) => {
       event.preventDefault();
 
-      dispatch(loginUser())
+      dispatch(loginUser());
     }
-  }
-}
+  };
+};
 
 const LoginButtonContainer = connect(
   mapStateToProps,
   mapDispatchToProps
-)(LoginButton)
+)(LoginButton);
 
-export default LoginButtonContainer
+export default LoginButtonContainer;
