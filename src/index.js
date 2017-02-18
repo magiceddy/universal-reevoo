@@ -14,7 +14,7 @@ import store from './store';
 // Config
 import truffleConfig from './../truffle-config.js';
 
-const history = syncHistoryWithStore(browserHistory, store)
+const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render((
     <Provider store={store}>

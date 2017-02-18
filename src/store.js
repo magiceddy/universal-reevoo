@@ -6,7 +6,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import reducer from './reducer';
 
 
-const routingMiddleware = routerMiddleware(browserHistory)
+const routingMiddleware = routerMiddleware(browserHistory);
 
 const store = createStore(
   reducer,
@@ -16,6 +16,6 @@ const store = createStore(
       routingMiddleware
       )
   )
-)
+);
 
-export default store
+export default store;
