@@ -8,6 +8,9 @@ import store from './store';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
+//flexboxgrid style
+import * as flexbox from 'flexboxgrid/css/flexboxgrid.css';
+
 injectTapEventPlugin();
 
 
