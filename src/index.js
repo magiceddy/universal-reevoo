@@ -1,31 +1,29 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
-import { Provider } from 'react-redux';
+import { Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
-import { UserIsAuthenticated, UserIsNotAuthenticated } from './util/wrappers.js';
-
-// Components
-import App from './App';
-import Home from './home/Home';
-import Dashboard from './dashboard/Dashboard';
+import { Provider } from 'react-redux';
+import { getRoutes } from './routes';
 import store from './store';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
-// Config
-import truffleConfig from './../truffle-config.js';
+//flexboxgrid style
+import * as flexbox from 'flexboxgrid/css/flexboxgrid.css';
 
-const history = syncHistoryWithStore(browserHistory, store)
+injectTapEventPlugin();
+
+
+const history = syncHistoryWithStore(browserHistory, store);
 
 ReactDOM.render((
+  <MuiThemeProvider>
     <Provider store={store}>
       <Router history={history}>
-        <Route path="/" component={App}>
-          <IndexRoute component={UserIsNotAuthenticated(Home)} />
-          <Route path="dashboard" component={UserIsAuthenticated(Dashboard)} />
-          {/*<Route path="*" component={Status404} />*/}
-        </Route>
+        {getRoutes}
       </Router>
     </Provider>
+  </MuiThemeProvider>
   ),
   document.getElementById('root')
 );
