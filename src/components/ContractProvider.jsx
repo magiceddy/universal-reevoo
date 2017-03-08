@@ -1,16 +1,15 @@
 import React, {Component, PropTypes} from 'react';
 import { default as Web3 } from 'web3';
 import { default as contract } from 'truffle-contract';
-//import Products from '../../build/contracts/Products.json';
 import TruffleConfig from '../../truffle-config';
 
-class TruffleContractWrapper extends Component {
+class ContractProvider extends Component {
 
   constructor(props) {
     super(props);
     this.web3Provided;
     this.web3Inizialize = this.web3Inizialize.bind(this);
-    this.buildTruffleContracts = this.buildTruffleContracts.bind(this);
+    this.buildContracts = this.buildContracts.bind(this);
   }
 
   componentWillMount() {
@@ -38,7 +37,7 @@ class TruffleContractWrapper extends Component {
     }
   }
 
-  buildTruffleContracts() {
+  buildContracts() {
     let contracts = {};
     let meta;
 
@@ -52,7 +51,7 @@ class TruffleContractWrapper extends Component {
   }
 
   getChildContext() {
-    let contracts = this.buildTruffleContracts();
+    let contracts = this.buildContracts();
     return { contracts, web3: this.web3Provided };
   }
 
@@ -61,13 +60,13 @@ class TruffleContractWrapper extends Component {
   }
 }
 
-TruffleContractWrapper.childContextTypes = {
+ContractProvider.childContextTypes = {
   contracts: React.PropTypes.object,
   web3: React.PropTypes.object
 };
 
-TruffleContractWrapper.propTypes = {
+ContractProvider.propTypes = {
   contracts: React.PropTypes.array.isRequired
 };
 
-export default TruffleContractWrapper;
+export default ContractProvider;
