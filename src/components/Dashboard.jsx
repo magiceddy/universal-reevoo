@@ -1,4 +1,6 @@
 import React, {PropTypes, Component} from 'react';
+import Paper from 'material-ui/Paper';
+import ProductForm from './ProductForm/ProductForm';
 
 class Dashboard extends Component {
 
@@ -8,7 +10,13 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <div>Ciao</div>
+      <div className="row">
+        <div className="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+          <Paper zDepth={2}>
+            <ProductForm />
+          </Paper>
+        </div>
+      </div>
     );
   }
 }
