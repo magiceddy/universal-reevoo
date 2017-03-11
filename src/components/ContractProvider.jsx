@@ -17,11 +17,11 @@ class ContractProvider extends Component {
   }
 
   web3Inizialize() {
-    let { NODE_ENV = 'development' } = process.env;
-    let {
+    const { NODE_ENV = 'development' } = process.env;
+    const {
       host = 'localhost', 
       port = 8545 } = TruffleConfig.networks[NODE_ENV];
-    let web3Location = `http://${host}:${port}`;
+    const web3Location = `http://${host}:${port}`; 
 
     if (typeof web3 !== 'undefined') {                            
       // Use the Mist/wallet provider.     
@@ -35,16 +35,18 @@ class ContractProvider extends Component {
       // given from the loction in the truffle-config file?
       this.web3Provided = new Web3(new Web3.providers.HttpProvider(web3Location));
     }
+
   }
 
   buildContracts() {
     let contracts = {};
     let meta;
 
-    this.props.contracts.forEach( (_contract) => {
+    this.props.contracts.forEach( _contract => {
       let {contract_name = ''} = _contract;
       meta = contract(_contract);
       meta.setProvider(this.web3Provided.currentProvider);
+      meta.defaults({from: this.web3Provided.eth.coinbase});
       contracts[contract_name] = meta;
     });
     return contracts;
@@ -56,7 +58,7 @@ class ContractProvider extends Component {
   }
 
   render() {
-    return <div>{this.props.children}</div>;
+    return <div>{ this.props.children }</div>;
   }
 }
 
