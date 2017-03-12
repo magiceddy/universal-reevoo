@@ -5,7 +5,7 @@ const addProductReducer = (state = {}, action) => {
 
   case PRODUCT_ADDED:
     return Object.assign({}, state, {
-      productAddedd: action.productName
+      productAdded: action.productName
     });
 
   default: 
