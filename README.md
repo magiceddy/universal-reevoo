@@ -1,6 +1,7 @@
-# Truffle Box (React, Redux and UPort Authentication)
+# Universal Reevoo 
 
-All truffle boxes come with Truffle, Webpack and React. This box adds react-router, redux and redux-auth-wrapper for authentication powered by UPort. The easiest way to get started with UPort.
+This is an alpha version of Universal Reevoo.
+You can log into the app with Uport. If you don't have it visit [Uport](https://www.uport.me/)
 
 ## Installation
 
@@ -10,7 +11,7 @@ All truffle boxes come with Truffle, Webpack and React. This box adds react-rout
     npm install -g ethereumjs-testrpc
     ```
 
-2. Clone or download the truffle box of your choice.
+2. Clone or download the repo.
     ```javascript
     git clone [repo]
     ```
@@ -18,6 +19,10 @@ All truffle boxes come with Truffle, Webpack and React. This box adds react-rout
 3. Install the node dependencies.
     ```javascript
     npm install
+    ```
+4. Run testrpc with nvm > 6.9.
+    ```javascript
+    testrpc
     ```
 
 4. Compile and migrate the contracts.
@@ -47,14 +52,20 @@ All truffle boxes come with Truffle, Webpack and React. This box adds react-rout
 
 ## FAQ
 
-* __Why is there both a truffle.js file and a truffle-config.js file?__
+* __May I use the project without Uport?__
 
-    Truffle requires the truffle.js file be named truffle-config on Windows machines. Feel free to delete the file that doesn't correspond to your platform.
+    Switch to ```feature/product-form``` branch
 
-* __Where is my production build?__
+* __I can't register products.__
 
-    The production build will be in the build_webpack folder. This is because Truffle outputs contract compilations to the build folder.
+    ```Product code``` must be an integer
 
-* __Where can I find more documentation?__
+## TODO
 
-    All truffle boxes are a marriage of [Truffle](http://truffleframework.com/) and a React setup created with [create-react-app](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md). Either one would be a great place to start!
+- [ ] Test
+- [ ] Kovan testnet
+- [ ] More Contracts
+- [ ] Fix ui
+- [ ] Better UX
+- [ ] ENS
+- [ ] ...
