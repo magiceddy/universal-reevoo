@@ -2,6 +2,7 @@ import React, { Component, PropTypes } from 'react';
 import {connect} from 'react-redux';
 import {default as buildedContracts} from '../contracts';
 import ContractProvider from './ContractProvider';
+import UportProvider from './UportProvider';
 import { isLoading} from '../components/Loader/selector';
 import { closeModal } from '../components/Modal/action';
 import { getModalStatus } from '../components/Modal/selector';
@@ -34,11 +35,13 @@ class App extends Component {
 
   render() {
     return (
-      <ContractProvider contracts={buildedContracts}>
-        {this.props.children}
-        {this.showLoader()}
-        {this.showModal()}
-      </ContractProvider>
+      <UportProvider>
+        <ContractProvider contracts={buildedContracts}>
+          {this.props.children}
+          {this.showLoader()}
+          {this.showModal()}
+        </ContractProvider>
+      </UportProvider>
     );
   }
 }

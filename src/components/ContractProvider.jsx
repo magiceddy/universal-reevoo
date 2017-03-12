@@ -8,12 +8,25 @@ class ContractProvider extends Component {
   constructor(props) {
     super(props);
     this.web3Provided;
+    this.fromAddress;
     this.web3Inizialize = this.web3Inizialize.bind(this);
     this.buildContracts = this.buildContracts.bind(this);
   }
 
   componentWillMount() {
     this.web3Inizialize();
+    //this.fromAddress = this.getCoinbase();
+  }
+
+  getCoinbase() {
+    const {web3} = this.context;
+
+    web3.eth.getCoinbase(function(err, address) {
+      if (err) { throw err; }
+      console.log(address);
+      web3.eth.defaultAccount = address;
+      return address;
+    });
   }
 
   web3Inizialize() {
@@ -54,7 +67,7 @@ class ContractProvider extends Component {
 
   getChildContext() {
     let contracts = this.buildContracts();
-    return { contracts, web3: this.web3Provided };
+    return { contracts };
   }
 
   render() {
@@ -63,12 +76,15 @@ class ContractProvider extends Component {
 }
 
 ContractProvider.childContextTypes = {
-  contracts: React.PropTypes.object,
-  web3: React.PropTypes.object
+  contracts: PropTypes.object
+};
+
+ContractProvider.contextTypes = {
+  web3: PropTypes.object
 };
 
 ContractProvider.propTypes = {
-  contracts: React.PropTypes.array.isRequired
+  contracts: PropTypes.array.isRequired
 };
 
 export default ContractProvider;

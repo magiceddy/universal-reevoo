@@ -5,5 +5,5 @@ import { default as components } from './components';
 
 export const getRoutes = 
       <Route path={'/'} component={components.App}>
-        <IndexRoute component={UserIsNotAuthenticated(components.Dashboard)} />
+        <IndexRoute component={UserIsNotAuthenticated(components.Login)} />
       </Route>;
