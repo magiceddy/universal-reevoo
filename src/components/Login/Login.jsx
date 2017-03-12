@@ -2,6 +2,8 @@ import React, { Component, PropTypes } from 'react';
 import {connect} from 'react-redux';
 import RaisedButton from 'material-ui/RaisedButton';
 import {login} from './actions';
+import { Link } from 'react-router';
+
 
 class Login extends Component {
 
@@ -16,7 +18,11 @@ class Login extends Component {
   }
 
   render() {
-    return <RaisedButton label="Log In" secondary={true} onClick={this.logIn} />;
+    return(
+      <Link to="/dashboard">
+        <RaisedButton label="Log In" secondary={true} onClick={this.logIn} />
+      </Link>
+    );
   }
 }
 

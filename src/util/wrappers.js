@@ -16,3 +16,19 @@ export const UserIsNotAuthenticated = UserAuthWrapper({
   predicate: user => user.data === null,
   allowRedirectBack: false
 });
+
+// UI Component Wrappers
+
+export const VisibleOnlyAuth = UserAuthWrapper({
+  authSelector: state => state.user,
+  wrapperDisplayName: 'VisibleOnlyAuth',
+  predicate: user => user.data,
+  FailureComponent: null
+});
+
+export const HiddenOnlyAuth = UserAuthWrapper({
+  authSelector: state => state.user,
+  wrapperDisplayName: 'HiddenOnlyAuth',
+  predicate: user => user.data === null,
+  FailureComponent: null
+});
