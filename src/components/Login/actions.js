@@ -20,7 +20,6 @@ export function login(uport) {
       if(!credentials) {
         dispatch(noLog());
       }
-      console.log(credentials);
       dispatch(log(credentials));
     });
   };
