@@ -23,15 +23,17 @@ module.exports = {
             "error",
             "unix"
         ],
-        "quotes": [
-            "error",
-            "single"
-        ],
+        quotes: ["error", "single", {
+            avoidEscape: true,
+            allowTemplateLiterals: true
+        }],
         "semi": [
             "error",
             "always"
         ],
         "no-undef": 1,
         "no-unused-vars": 0,
+        "no-console": 0,
+        "no-class-assign": 0
     }
 };

@@ -7,7 +7,6 @@ contract Products {
 
     /* emit when product is added */
     event productAdded(
-        uint indexed code,
         string name
     );
 
@@ -63,6 +62,6 @@ contract Products {
                 created: true
             }
         );
-        productAdded(_code, _name);
+        productAdded(_name);
     }
 }
