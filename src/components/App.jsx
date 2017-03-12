@@ -6,8 +6,9 @@ import UportProvider from './UportProvider';
 import { isLoading} from '../components/Loader/selector';
 import { closeModal } from '../components/Modal/action';
 import { getModalStatus } from '../components/Modal/selector';
-import { CircularProgress } from 'material-ui';
+import { CircularProgress, AppBar } from 'material-ui';
 import ModalDialog from '../components/Modal/modalDialog';
+import {centerInPage} from '../style/app.css';
 
 class App extends Component {
 
@@ -22,7 +23,6 @@ class App extends Component {
       'top': '50%', 
       'right': '50%'
     };
-
     return (
       this.props.isLoading ?
         <CircularProgress
@@ -37,6 +37,7 @@ class App extends Component {
     return (
       <UportProvider>
         <ContractProvider contracts={buildedContracts}>
+          <AppBar title={'UNIVERSAL REEVOO'} />
           {this.props.children}
           {this.showLoader()}
           {this.showModal()}

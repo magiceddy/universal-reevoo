@@ -40,7 +40,7 @@ class ProductForm extends Component {
           </div>
         </div>
         <div className="row center-xs">
-          <div>
+          <div style={{marginTop: '10%'}}>
             <RaisedButton type="submit" 
                           disabled={pristine || submitting} 
                           label="Register Product" 
