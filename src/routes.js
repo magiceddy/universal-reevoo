@@ -4,7 +4,9 @@ import { UserIsAuthenticated, UserIsNotAuthenticated } from './util/wrappers.js'
 import { default as components } from './components';
 
 export const getRoutes = 
-      <Route path={'/'} component={components.App}>
-        <IndexRoute component={UserIsNotAuthenticated(components.Login)} />
+      <Route path={'/'} component={UserIsNotAuthenticated(components.App)}>
         <Route path="dashboard" component={UserIsAuthenticated(components.Dashboard)} />
       </Route>;
+
+//  <IndexRoute component={UserIsNotAuthenticated(components.Login)} />
+

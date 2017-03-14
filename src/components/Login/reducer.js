@@ -1,4 +1,4 @@
-import { SUCCESS_LOGIN, FAILURE_LOGIN } from './constants';
+import { SUCCESS_LOGIN, FAILURE_LOGIN, LOGOUT } from './constants';
 
 const initialState = {
   data: null
@@ -16,6 +16,9 @@ const userReducer = (state = initialState, action) => {
     return Object.assign({}, state, {
       data: null
     });
+  
+  case LOGOUT:
+    return Object.assign( {}, state, initialState );
 
   default:
     return state;

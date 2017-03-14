@@ -32,3 +32,10 @@ export const HiddenOnlyAuth = UserAuthWrapper({
   predicate: user => user.data === null,
   FailureComponent: null
 });
+
+export const switchAuthComponent = (Component, FailureComponent) => UserAuthWrapper({
+  authSelector: state => state.user,
+  wrapperDisplayName: 'switchAuthComponent',
+  predicate: user => user.data,
+  FailureComponent
+})(Component);

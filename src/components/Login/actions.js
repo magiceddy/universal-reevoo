@@ -1,4 +1,4 @@
-import { SUCCESS_LOGIN, FAILURE_LOGIN } from './constants';
+import { SUCCESS_LOGIN, FAILURE_LOGIN, LOGOUT } from './constants';
 
 const log = (credentials) => {
   return {
@@ -22,5 +22,11 @@ export function login(uport) {
       }
       dispatch(log(credentials));
     });
+  };
+}
+
+export function logout() {
+  return {
+    type : LOGOUT,
   };
 }
