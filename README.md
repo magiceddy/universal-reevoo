@@ -68,4 +68,7 @@ You can log into the app with Uport. If you don't have it visit [Uport](https://
 - [ ] Fix ui
 - [ ] Better UX
 - [ ] ENS
+- [ ] Dapple
+- [ ] DappHub
+- [ ] Infura
 - [ ] ...
