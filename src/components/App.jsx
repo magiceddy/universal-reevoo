@@ -6,9 +6,10 @@ import UportProvider from './UportProvider';
 import { isLoading} from '../components/Loader/selector';
 import { closeModal } from '../components/Modal/action';
 import { getModalStatus } from '../components/Modal/selector';
-import { CircularProgress, AppBar } from 'material-ui';
+import { CircularProgress } from 'material-ui';
 import ModalDialog from '../components/Modal/modalDialog';
 import {centerInPage} from '../style/app.css';
+import Toolbar from './Toolbar';
 
 class App extends Component {
 
@@ -37,7 +38,7 @@ class App extends Component {
     return (
       <UportProvider>
         <ContractProvider contracts={buildedContracts}>
-          <AppBar title={'UNIVERSAL REEVOO'} />
+          <Toolbar />
           {this.props.children}
           {this.showLoader()}
           {this.showModal()}
