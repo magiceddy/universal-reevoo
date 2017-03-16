@@ -72,4 +72,5 @@ You can log into the app with Uport. If you don't have it visit [Uport](https://
 - [ ] DappHub
 - [ ] Infura
 - [ ] Security [Electron + Metamask](https://blog.aragon.one/electron-metamask-secure-easy-to-use-dapps-5a9987d21034#.v4b78wf78) 
+- [ ] Status?
 - [ ] ...
