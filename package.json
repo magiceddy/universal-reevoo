@@ -68,8 +68,8 @@
     "redux-devtools-extension": "^2.13.0",
     "redux-form": "^6.5.0",
     "redux-thunk": "^2.2.0",
-    "uport-connect": "^0.4.2",
-    "zeppelin-solidity": "^1.0.4"
+    "uport-connect": "^0.5.3"
+    //"zeppelin-solidity": "^1.0.4"
   },
   "scripts": {
     "start": "node scripts/start.js",

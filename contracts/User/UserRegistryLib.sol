@@ -1,25 +1,25 @@
-pragma solidity^0.4.7;
+pragma solidity ^0.4.7;
 
 /// @title Registry for all user
 /// @author Rinaldo Rossi <rinaldo.rossi.web@gmail.com>
 
-library UserRegistry {
+library UserRegistryLib {
 
   /// @dev List of all users
   struct List {
     mapping(bytes32 => uint) userList;
-  };
+  }
 
   /* @dev add user 
-   * @param id - Uport publicKey
-   * @param type - user type 
+   * @param _id - Uport publicKey
+   * @param _type - user type 
    * [0][Admin] 
    */
-  function add(List storage self, bytes32 id,  uint type) 
+  function add(List storage self, bytes32 _id,  uint _type) 
       returns(bool) 
   {
-    self.userList[id] = type;
-    addedUserLog(id, type);
+    self.userList[_id] = _type;
+    addedUserLog(_id, _type);
     return true;
   }
 
@@ -27,11 +27,12 @@ library UserRegistry {
   /* @dev get user 
    * @param id - Uport publicKey
    */
-  function get(List storage self, bytes32 id) 
+  function get(List storage self, bytes32 _id) 
       returns(uint)
   {
-    return self.userList[id];
+    return self.userList[_id];
   }
 
   
-  event addedUserLog(bytes32 id, uint type);
+  event addedUserLog(bytes32 _id, uint _type);
+}
