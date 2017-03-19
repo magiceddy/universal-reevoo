@@ -1,4 +1,4 @@
-pragma solidity^0.4.7;
+pragma solidity ^0.4.7;
 
 /// @title List of product
 /// @author Rinaldo Rossi <rinaldo.rossi.web@gmail.com>
