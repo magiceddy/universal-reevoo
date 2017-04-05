@@ -1,3 +1,4 @@
 export const SUCCESS_LOGIN = 'SUCCESS_LOGIN';
 export const FAILURE_LOGIN = 'FAILURE_LOGIN';
 export const LOGOUT = 'LOGOUT';
+export const SUCCESS_REGISTRATION = 'SUCCESS_REGISTRATION'; 
