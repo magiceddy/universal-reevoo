@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import {connect} from 'react-redux';
 import {RaisedButton} from 'material-ui';
-import {register} from './actions';
+import {registration} from './actions';
 import { Link } from 'react-router';
 
 class RegisterButton extends Component {
@@ -12,8 +12,17 @@ class RegisterButton extends Component {
   }
 
   register() {
-    const {uport} = this.context;
-    this.props.login(uport);
+    const {
+      uport = null,
+      web3 = null,
+      contracts: {
+        SimpleUserManager = null }} = this.context;
+
+    this.props.registration({
+      uport,
+      SimpleUserManager,
+      web3
+    });
   }
 
   render() {
@@ -30,7 +39,9 @@ class RegisterButton extends Component {
 }
 
 RegisterButton.contextTypes = {
-  
+  uport: PropTypes.object.isRequired,
+  contracts: PropTypes.object.isRequired,
+  web3: PropTypes.object.isRequired
 };
 
 RegisterButton.PropTypes = {
@@ -39,5 +50,5 @@ RegisterButton.PropTypes = {
 
 export default connect(
   (state) => ({}),
-  {register}
+  {registration}
 )(RegisterButton);

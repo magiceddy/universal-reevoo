@@ -17,25 +17,24 @@ contract UserManager {
    * @param _type - user type 
    * [0][Admin] 
    */
-  function addUser(bytes32 _id, uint _type) 
+  function addUser(string _id, string _type) 
       returns (bool)
   {
     userRegistry.add(_id, _type);
     addedUserLog(_id, _type);
-    return true;
   }
 
   /* @dev get user 
    * @param id - Uport publicKey
    */
-  function getUserType(bytes32 _id)
+  /*function getUserType(bytes32 _id)
       constant
-      returns (uint)
+      returns (bytes32)
   {
     return (userRegistry.get(_id));
-  }
+  }*/
 
   //transfer(address newOwner) onlyOwner
 
-  event addedUserLog(bytes32 _id, uint _type);
+  event addedUserLog(string _id, string _type);
 }
